@@ -12,17 +12,20 @@
       <h1>My tasks</h1>
       <div class="add-task-wrapper">
         <div class="icon"><img src="assets/list-icon.svg" /></div>
-        <button class="add-new-task">Add new task +</button>
+        <button class="add-new-task main-page-btn">Add new task +</button>
       </div>
     </header>
     <main>
+      <div class="tasks"></div>
       <div class="no-tasks">
         <h2>You don't have any tasks to do :)</h2>
         <div class="no-tasks-img"><img src="/assets/relax.svg" /></div>
       </div>
-      <button class="add-task-icon"><img src="/assets/add-icon.svg" /></button>
     </main>
-    <div class="task-card">
+    <button class="add-task-icon main-page-btn">
+      <img src="/assets/add-icon.svg" />
+    </button>
+    <!--    <div class="task-card">
       <div class="checkbox-wrapper">
         <input id="task" type="checkbox" name="task" />
         <div class="task-text-wrapper">
@@ -34,33 +37,8 @@
         </div>
       </div>
       <div class="remove-icon"><img src="/assets/remove-icon.svg" /></div>
-    </div>
-    <div class="task-card">
-      <div class="checkbox-wrapper">
-        <input id="task" type="checkbox" name="task" />
-        <div class="task-text-wrapper">
-          <div class="task-title">Looking for internship</div>
-          <div class="description">
-            bla bla bla bla bla bla bl bla bla bla bla bla bla bl bla bla bla
-            bla bla bla bl bla bla bla bla bla bla bl bla bla bla bla bla bla bl
-          </div>
-        </div>
-      </div>
-      <div class="remove-icon"><img src="/assets/remove-icon.svg" /></div>
-    </div>
-    <div class="task-card">
-      <div class="checkbox-wrapper">
-        <input id="task" type="checkbox" name="task" />
-        <div class="task-text-wrapper">
-          <div class="task-title">Looking for internship</div>
-          <div class="description">
-            bla bla bla bla bla bla bl bla bla bla bla bla bla bl bla bla bla
-            bla bla bla bl bla bla bla bla bla bla bl bla bla bla bla bla bla bl
-          </div>
-        </div>
-      </div>
-      <div class="remove-icon"><img src="/assets/remove-icon.svg" /></div>
-    </div>
+    </div> -->
+
     <div id="add-task-modal" class="modal hidden">
       <div class="dialog">
         <div class="modal-header">
@@ -70,23 +48,31 @@
           <div class="modal-title">New task</div>
         </div>
         <div class="dialog-content">
-          <div class="input-group">
-            <label for="name" class="label-title">Name</label>
+          <form>
+            <div class="input-group">
+              <label for="name" class="label-title">Name</label>
 
-            <input type="text" id="name" name="name" placeholder="" required />
-          </div>
-          <div class="input-group">
-            <label for="description" class="label-title">Description</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder=""
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="description" class="label-title">Description</label>
 
-            <textarea
-              id="description"
-              name="description"
-              placeholder=""
-              required
-            ></textarea>
-          </div>
+              <textarea
+                id="description"
+                name="description"
+                placeholder=""
+                required
+              ></textarea>
+            </div>
+          </form>
         </div>
-        <button>Add task</button>
+        <button class="add-new-task submit">Add task</button>
       </div>
     </div>
 
