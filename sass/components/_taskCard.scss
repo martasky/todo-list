@@ -1,12 +1,12 @@
 @use "../base/typography";
-input {
+input[type="checkbox"] {
   width: 2.5rem;
   height: 2.5rem;
   background-image: url("/assets/checkbox.svg");
   background-size: 100%;
   background-repeat: no-repeat;
 }
-input:checked {
+input[type="checkbox"]:checked {
   background-image: url("/assets/checkbox-checked.svg");
   background-repeat: no-repeat;
 }

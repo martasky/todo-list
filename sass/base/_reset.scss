@@ -18,7 +18,8 @@ label {
 body {
   font-size: 16px;
 }
-input {
+input[type="checkbox"],
+input[type="text"] {
   outline: none;
   -webkit-appearance: none;
   appearance: none;
