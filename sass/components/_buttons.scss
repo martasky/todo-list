@@ -1,6 +1,6 @@
 @use "../base/typography";
 
-button {
+.add-new-task {
   border: none;
 
   border-radius: 33px;
@@ -13,5 +13,10 @@ button {
 }
 
 .add-task-icon {
-  width: 6rem;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  background-color: var(--bg-main-color);
+  margin: 0 auto;
 }

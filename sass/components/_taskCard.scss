@@ -26,6 +26,8 @@ input[type="checkbox"]:checked {
     flex-direction: row;
     gap: 1rem;
   }
+  .task-text-wrapper {
+  }
   .task-title {
     font-family: var(--primary-font);
     color: var(--task-text-color);
@@ -36,6 +38,7 @@ input[type="checkbox"]:checked {
     font-family: var(--primary-font);
     color: var(--task-text-color);
     width: 25ch;
+
     font-size: 0.8rem;
     margin-top: 0.2rem;
   }
