@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <g id="checkbox-checked" transform="translate(-27 -436)">
+    <g id="Rectangle_10" data-name="Rectangle 10" transform="translate(27 436)" fill="#004f54" stroke="#004f54" stroke-width="2">
+      <rect width="36" height="36" rx="6" stroke="none"/>
+      <rect x="1" y="1" width="34" height="34" rx="5" fill="none"/>
+    </g>
+    <g id="Group_14" data-name="Group 14" transform="translate(1.5 54.5)">
+      <line id="Line_17" data-name="Line 17" x1="9" y2="16" transform="translate(42.5 391.5)" fill="none" stroke="#f5f5f5" stroke-linecap="round" stroke-width="3"/>
+      <g id="Group_39" data-name="Group 39">
+        <line id="Line_18" data-name="Line 18" x2="6" y2="4" transform="translate(36.5 403.5)" fill="none" stroke="#f5f5f5" stroke-linecap="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

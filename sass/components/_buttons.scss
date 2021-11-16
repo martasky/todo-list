@@ -1,0 +1,17 @@
+@use "../base/typography";
+
+button {
+  border: none;
+
+  border-radius: 33px;
+  padding: 0.5rem;
+  width: 250px;
+  font-family: var(--primary-font);
+  font-size: 1rem;
+  color: var(--secodary-text-color);
+  font-weight: 600;
+}
+
+.add-task-icon {
+  width: 6rem;
+}

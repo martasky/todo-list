@@ -1,0 +1,42 @@
+@use "../components/buttons";
+@use "../base/typography";
+
+header {
+  background-color: var(--bg-secondary-color);
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 1rem;
+  padding-top: 2rem;
+  h1 {
+    color: var(--heading-text-color);
+    font-family: var(--primary-font);
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .add-task-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+}
+
+.no-tasks {
+  margin: 3rem;
+  margin-bottom: 3rem;
+  display: grid;
+  gap: 3rem;
+  h2 {
+    font-family: var(--primary-font);
+    color: var(--bg-secondary-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+  }
+}
+
+.add-task-icon {
+  margin: 0 auto;
+}
