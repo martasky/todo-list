@@ -43,6 +43,10 @@ input[type="checkbox"]:checked {
   }
   .remove-icon {
     width: 2.5rem;
+    height: 2.5rem;
+    background-image: url(/assets/remove-icon.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 }
 @media screen and (min-width: 400px) {
