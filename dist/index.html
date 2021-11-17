@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>To do List</title>
+    <script type="module" crossorigin src="/assets/index.1fa9474e.js"></script>
+    <link rel="stylesheet" href="/assets/index.9aec4857.css">
+  </head>
+  <body>
+    <header>
+      <h1>My tasks</h1>
+      <div class="add-task-wrapper">
+        <div class="icon"><img src="/assets/list-icon.517ee72f.svg" /></div>
+        <button class="add-new-task main-page-btn">Add new task +</button>
+      </div>
+    </header>
+    <main>
+      <div class="tasks"></div>
+      <div class="no-tasks">
+        <h2>You don't have any tasks to do :)</h2>
+        <div class="no-tasks-img"><img src="/assets/relax.bd5b85ed.svg" /></div>
+      </div>
+    </main>
+    <button class="add-task-icon main-page-btn">
+      <img src="/assets/add-icon.041be1d4.svg" />
+    </button>
+
+    <div id="add-task-modal" class="modal hidden">
+      <div class="dialog">
+        <div class="modal-header">
+          <div class="go-back-icon">
+            <img src="/assets/back-arrow.91802f2a.svg" alt="" />
+          </div>
+          <div class="modal-title">New task</div>
+        </div>
+        <div class="dialog-content">
+          <form>
+            <div class="input-group">
+              <label for="name" class="label-title">Name</label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder=""
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="description" class="label-title">Description</label>
+
+              <textarea
+                id="description"
+                name="description"
+                placeholder=""
+                required
+              ></textarea>
+            </div>
+          </form>
+        </div>
+        <button class="add-new-task submit">Add task</button>
+      </div>
+    </div>
+
+    
+  </body>
+</html>

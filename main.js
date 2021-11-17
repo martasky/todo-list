@@ -52,7 +52,7 @@ function createTask(data) {
             </div>
           </div>
         </div>
-        <div class="remove-icon"><img src="/assets/remove-icon.svg" /></div>
+        <div class="remove-icon"><img src="/assets/remove-icon.svg"/></div>
       </div>`;
 
   document.querySelector(".no-tasks").style.display = "none";
