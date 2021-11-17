@@ -8,6 +8,7 @@ let allDataArr = [];
 
 function init() {
   registerButtons();
+  // check if there is something in localstorage and if so get it
   if (localStorage.length != 0) {
     let tasks = JSON.parse(localStorage.getItem("task"));
     console.log("storage", tasks);
@@ -26,11 +27,10 @@ function registerButtons() {
   addBtn.addEventListener("click", getValue);
 }
 
-export function getValue(e) {
-  console.log("was clicked");
+// get the value from input fields
+function getValue(e) {
   const form = document.querySelector("form");
   const data = {
-    id: Date.now(),
     title: form.elements.name.value,
     description: form.elements.description.value,
     checked: false,
@@ -40,6 +40,7 @@ export function getValue(e) {
   createTask(data);
 }
 
+//create new to do item
 function createTask(data) {
   const task = `<div class="task-card">
         <div class="checkbox-wrapper">
@@ -59,28 +60,30 @@ function createTask(data) {
   newTask.innerHTML = task;
   document.querySelector(".tasks").append(newTask);
 
-  const deleteTasks = document.querySelectorAll(".remove-icon");
-  deleteTasks.forEach((deleteTask) => {
-    deleteTask.addEventListener("click", function (e) {
-      allDataArr = removeTask(e, allDataArr);
-      addToStorage(allDataArr);
-    });
+  //when item has been clicked, it returnes the array without it and sends it to localstorage
+  const deleteTask = newTask.querySelector(".remove-icon");
+  deleteTask.addEventListener("click", function (e) {
+    allDataArr = removeTask(e, allDataArr);
+    addToStorage(allDataArr);
   });
 
+  //if localstorage is not empty, it checkes if some items are checked and it clickes it to change the checkbox
   const toggleCheckbox = newTask.querySelector("input[type=checkbox");
   if (data.checked) {
     toggleCheckbox.click();
   }
+
+  //When input checkbox has been clicked, it updates the array and sends it to local storage
   toggleCheckbox.addEventListener("click", function (e) {
     allDataArr = toggleTask(e, allDataArr);
     addToStorage(allDataArr);
   });
-
+  //add new item to the array of all tasks
   allDataArr.push(data);
   console.log(allDataArr);
   addToStorage(allDataArr);
 }
-
+//saves the array of all tasks in localstorage
 function addToStorage(data) {
   localStorage.setItem("task", JSON.stringify(data));
 }

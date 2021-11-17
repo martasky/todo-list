@@ -1,9 +1,5 @@
 export function toggleTask(e, allDataArr) {
-  console.log("remove was clicked");
   console.log(e.currentTarget);
-  /*   if (e.currentTarget.checked) {
-    allDataArr.checked = true;
-  } */
 
   let title =
     e.currentTarget.parentElement.parentElement.querySelector(
@@ -16,6 +12,7 @@ export function toggleTask(e, allDataArr) {
     ).textContent;
 
   console.log(allDataArr);
+  // if the text in the tasks is the same as value in the all tasks array, toggle checked property
   allDataArr.forEach((elem) => {
     if (
       elem.title.trim() == title.trim() &&
