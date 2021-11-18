@@ -89,9 +89,6 @@ function createTask(data) {
       desc.textContent = `${data.description.substring(0, 25)}...`;
     }
   });
-  const el = document.querySelector("textarea");
-
-  el.style.height = "150px";
 
   //if localstorage is not empty, it checkes if some items are checked and it clickes it to change the checkbox
   const toggleCheckbox = newTask.querySelector("input[type=checkbox");
