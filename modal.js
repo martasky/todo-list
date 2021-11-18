@@ -9,7 +9,5 @@ export function openModal() {
 export function closeModal() {
   const modal = document.querySelector("#add-task-modal");
   modal.classList.add("hidden");
-  const el = document.querySelector("textarea");
-  el.value = "";
-  el.style.height = "150px";
+  document.querySelector("textarea").value = "";
 }

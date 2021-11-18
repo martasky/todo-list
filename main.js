@@ -3,7 +3,6 @@ import { openModal, closeModal } from "./modal.js";
 import { removeTask } from "./removetask.js";
 import { toggleTask } from "./toggleTask.js";
 import { showDescription } from "./showDescription";
-import { autoExpandTextarea } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", init);
 let allDataArr = [];
@@ -18,7 +17,6 @@ function init() {
       createTask(task);
     });
   }
-  autoExpandTextarea();
 }
 
 function registerButtons() {
