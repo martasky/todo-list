@@ -29,14 +29,14 @@ textarea {
 
   max-height: 50vh;
 }
-#add-task-modal {
-}
+
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  overflow: auto;
   z-index: 1;
   display: flex;
 
@@ -48,7 +48,7 @@ textarea {
   background-color: var(--bg-secondary-color);
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: max-content;
   text-align: center;
   padding: 1rem;
   padding-top: 2rem;
