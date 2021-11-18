@@ -2,6 +2,8 @@ import "./sass/style.scss";
 import { openModal, closeModal } from "./modal.js";
 import { removeTask } from "./removetask.js";
 import { toggleTask } from "./toggleTask.js";
+import { showDescription } from "./showDescription";
+import { autoExpandTextarea } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", init);
 let allDataArr = [];
@@ -16,6 +18,7 @@ function init() {
       createTask(task);
     });
   }
+  autoExpandTextarea();
 }
 
 function registerButtons() {
@@ -31,6 +34,7 @@ function registerButtons() {
 function getValue(e) {
   const form = document.querySelector("form");
   const data = {
+    id: Math.random(),
     title: form.elements.name.value,
     description: form.elements.description.value,
     checked: false,
@@ -44,11 +48,11 @@ function getValue(e) {
 function createTask(data) {
   const task = `<div class="task-card">
         <div class="checkbox-wrapper">
-          <input id="task" type="checkbox" name="task" />
+          <input class="task" type="checkbox" name="task" />
           <div class="task-text-wrapper">
             <div class="task-title">${data.title}</div>
             <div class="description">
-            ${data.description}
+            ${data.description.substring(0, 25)}
             </div>
           </div>
         </div>
@@ -60,12 +64,36 @@ function createTask(data) {
   newTask.innerHTML = task;
   document.querySelector(".tasks").append(newTask);
 
+  newTask.setAttribute("id", data.id);
+  console.log("newtask", newTask);
+
   //when item has been clicked, it returnes the array without it and sends it to localstorage
   const deleteTask = newTask.querySelector(".remove-icon");
   deleteTask.addEventListener("click", function (e) {
     allDataArr = removeTask(e, allDataArr);
+    console.log("after removed", allDataArr);
     addToStorage(allDataArr);
   });
+
+  //add ... to long descriptions
+  const desc = newTask.querySelector(".description");
+  if (desc.textContent.length >= 51) {
+    desc.textContent = `${data.description.substring(0, 25)}...`;
+  }
+  //toggle description
+  desc.addEventListener("click", function (e) {
+    console.log("after click", desc.textContent.length);
+    if (desc.textContent.length <= 54) {
+      console.log(desc.textContent.length);
+      showDescription(e, data);
+    } else {
+      console.log(desc.textContent.length);
+      desc.textContent = `${data.description.substring(0, 25)}...`;
+    }
+  });
+  const el = document.querySelector("textarea");
+
+  el.style.height = "150px";
 
   //if localstorage is not empty, it checkes if some items are checked and it clickes it to change the checkbox
   const toggleCheckbox = newTask.querySelector("input[type=checkbox");
@@ -75,7 +103,8 @@ function createTask(data) {
 
   //When input checkbox has been clicked, it updates the array and sends it to local storage
   toggleCheckbox.addEventListener("click", function (e) {
-    allDataArr = toggleTask(e, allDataArr);
+    allDataArr = toggleTask(e, data, allDataArr);
+
     addToStorage(allDataArr);
   });
   //add new item to the array of all tasks

@@ -1,5 +1,5 @@
 export function removeTask(e, allDataArr) {
-  console.log(e.currentTarget.parentElement.parentElement);
+  console.log("parent", e.currentTarget.parentElement.parentElement);
   const tasks = document.querySelector(".tasks");
   console.log(tasks.childNodes.length);
 
@@ -8,23 +8,10 @@ export function removeTask(e, allDataArr) {
     document.querySelector(".no-tasks").style.display = "inherit";
   }
   //find the text in the tasks, which is the same as in the all tasks arry
-  let title =
-    e.currentTarget.parentElement.parentElement.querySelector(
-      ".task-title"
-    ).textContent;
-  console.log(title);
-  let desc =
-    e.currentTarget.parentElement.parentElement.querySelector(
-      ".description"
-    ).textContent;
-  e.currentTarget.parentElement.parentElement.remove();
 
+  e.currentTarget.parentElement.parentElement.remove();
+  const toBeRemoved = e.currentTarget.parentElement.parentElement.id;
+  console.log("toberemoved", toBeRemoved);
   //gets all the other objects which doesnt contain the same value as the item clicked to be removed
-  return allDataArr.filter(
-    (elem) =>
-      !(
-        elem.title.trim() === title.trim() &&
-        elem.description.trim() === desc.trim()
-      )
-  );
+  return allDataArr.filter((elem) => elem.id != toBeRemoved);
 }

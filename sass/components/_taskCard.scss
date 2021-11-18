@@ -1,9 +1,9 @@
 @use "../base/typography";
 input[type="checkbox"] {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   background-image: url("/assets/checkbox.svg");
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 input[type="checkbox"]:checked {
@@ -32,6 +32,7 @@ input[type="checkbox"]:checked {
     color: var(--task-text-color);
     font-weight: 500;
     font-size: 1rem;
+    width: 20ch;
   }
   .description {
     font-family: var(--primary-font);
@@ -42,10 +43,10 @@ input[type="checkbox"]:checked {
     margin-top: 0.2rem;
   }
   .remove-icon {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     background-image: url(/assets/remove-icon.svg);
-    background-size: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
   }
 }

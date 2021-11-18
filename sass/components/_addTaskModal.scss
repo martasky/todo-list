@@ -26,6 +26,8 @@ textarea {
   overflow: auto;
   resize: none;
   padding: 1rem;
+
+  max-height: 50vh;
 }
 #add-task-modal {
 }
@@ -33,7 +35,6 @@ textarea {
   position: fixed;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100vh;
   z-index: 1;
@@ -75,4 +76,10 @@ label {
 }
 .hidden {
   visibility: hidden;
+}
+.empty {
+  width: 2rem;
+}
+.go-back-icon {
+  width: 2rem;
 }
